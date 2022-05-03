@@ -1,0 +1,36 @@
+@import "../../config.scss";
+.Table {
+    margin: $margin;
+    padding: $padding;
+    border-collapse: collapse;
+    &__head {
+        border-color: transparent;
+        background-color: lighten($base, 70);
+        &__col {
+            border-color: transparent;
+            font-size: large;
+            padding: $padding;
+        }
+    }
+    &__body {
+        &__row {
+            &__col {
+                padding: $padding;
+            }
+            &:nth-of-type(odd) {
+                background-color: lighten($base, 60);
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: lighten($base, 55);
+                }
+            }
+            &:nth-of-type(even) {
+                background-color: lighten($base, 50);
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    background-color: lighten($base, 45);
+                }
+            }
+        }
+    }
+}
