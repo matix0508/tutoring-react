@@ -1,43 +1,53 @@
-import React, { FC } from 'react'
+import React, { FC } from "react";
 import styles from "./Table.module.scss";
-
-
-
+import { useTable } from "react-table";
 
 type TableProps = {
-    data: [],
-    columns: []
-}
+  data: any[];
+  columns: any[];
+};
+
+export const Table: FC<TableProps> = ({ data, columns }) => {
 
 
-export const Table:FC<TableProps> = () => {
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data });
+
   return (
-    <table className={styles.Table}>
-        <thead>
-            <tr className={styles.Table__head}>
-                <th className={styles.Table__head__col}>Col1</th>
-                <th className={styles.Table__head__col}>Col1</th>
-                <th className={styles.Table__head__col}>Col1</th>
+    <table {...getTableProps()} className={styles.Table}>
+      <thead>
+        {headerGroups.map((headerGroup) => (
+          <tr
+            {...headerGroup.getHeaderGroupProps()}
+            className={styles.Table__head}
+          >
+            {headerGroup.headers.map((column) => (
+              <th
+                {...column.getHeaderProps()}
+                className={styles.Table__head__col}
+              >
+                {column.render("Header")}
+              </th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+      <tbody {...getTableBodyProps()} className={styles.Table__body}>
+        {rows.map((row) => {
+          prepareRow(row);
+          return (
+            <tr {...row.getRowProps()} className={styles.Table__body__row}>
+              {row.cells.map((cell) => {
+                return (
+                  <td {...cell.getCellProps()} className={styles.Table__body__row__col}>
+                    {cell.render("Cell")}
+                  </td>
+                )
+              })}
             </tr>
-        </thead>
-        <tbody className={styles.Table__body}>
-            <tr className={styles.Table__body__row}>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-            </tr>
-            <tr className={styles.Table__body__row}>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-            </tr>
-            <tr className={styles.Table__body__row}>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-                <td className={styles.Table__body__row__col}>Siema</td>
-            </tr>
-
-        </tbody>
+          )
+        })}
+      </tbody>
     </table>
-  )
-}
+  );
+};

@@ -5,7 +5,7 @@ import styles from "./Students.module.scss";
 export const Students = () => {
   return (
     <div className={styles.Students}>
-        <Table />
+        {/* <Table /> */}
     </div>
   )
 }
