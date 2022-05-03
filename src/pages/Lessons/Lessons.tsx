@@ -37,7 +37,9 @@ export const Lessons = () => {
 
   return (
     <div className={styles.Lessons}>
-      <Table columns={columns} data={data} />
+      <div className={styles.Lessons__table}>
+        <Table columns={columns} data={data} />
+      </div>
     </div>
   );
 };

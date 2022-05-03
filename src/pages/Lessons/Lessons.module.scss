@@ -1,0 +1,10 @@
+@import "../../config.scss";
+.Lessons {
+    &__table {
+        width: fit-content;
+        margin: $margin;
+        padding: $padding;
+        border-radius: $radius;
+        background-color: lighten($base, 75);
+    }
+}
