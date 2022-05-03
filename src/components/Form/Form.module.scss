@@ -1,0 +1,23 @@
+@import "../../config.scss";
+.Form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border-radius: $radius;
+    background-color: lighten($base, 80);
+    padding: $padding * 2;
+    &__submit {
+        padding: $padding;
+        margin: $margin;
+        background-color: lighten($base, 70);
+        border-radius: $radius;
+    }
+    &__title {
+        padding: $padding;
+        margin: $margin;
+        font-size: large;
+        font-weight: 500;
+    }
+}

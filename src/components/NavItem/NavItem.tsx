@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./NavItem.module.scss";
 
 type NavItemProps = {
@@ -7,10 +8,11 @@ type NavItemProps = {
 };
 
 export const NavItem: FC<NavItemProps> = ({ name, to }) => {
+  const navigate = useNavigate();
   return (
     <li
       onClick={() => {
-        console.log(`Go to ${to}`);
+        navigate(to);
       }}
       className={styles.NavItem}
     >
