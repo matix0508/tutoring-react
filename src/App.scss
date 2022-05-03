@@ -1,0 +1,17 @@
+@import "./config.scss";
+.App {
+    background-color: $bg;
+    color: $base;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    main {
+        padding: 1rem;
+        flex-grow: 1;
+    }
+    footer {
+        padding: 1rem;
+        text-align: center;
+        background-color: lighten($base, 60);
+    }
+}

@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import './App.scss';
+import { Nav } from './components/Nav/Nav';
+import { NavItem } from './components/NavItem/NavItem';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav>
+        <NavItem name='Lessons' to='lessons' />
+        <NavItem name='Students' to='students' />
+        <NavItem name='Payments' to='payments' />
+      </Nav>
+
+      <main>
+        <h1>Hello World</h1>
+      </main>
+      <footer>
+        Mateusz Wlekliński
+      </footer>
     </div>
   );
 }
