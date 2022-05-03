@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tutoring-react/static/css/main.cf9b7716.css",
+    "main.js": "/tutoring-react/static/js/main.e5a74847.js",
+    "static/js/787.f50500a3.chunk.js": "/tutoring-react/static/js/787.f50500a3.chunk.js",
+    "index.html": "/tutoring-react/index.html",
+    "main.cf9b7716.css.map": "/tutoring-react/static/css/main.cf9b7716.css.map",
+    "main.e5a74847.js.map": "/tutoring-react/static/js/main.e5a74847.js.map",
+    "787.f50500a3.chunk.js.map": "/tutoring-react/static/js/787.f50500a3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf9b7716.css",
+    "static/js/main.e5a74847.js"
+  ]
+}
