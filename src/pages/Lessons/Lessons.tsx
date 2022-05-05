@@ -1,4 +1,5 @@
 import React from "react";
+import { Form } from "../../components/Form/Form";
 import { Table } from "../../components/Table/Table";
 import styles from "./Lessons.module.scss";
 const data = [
@@ -40,6 +41,18 @@ export const Lessons = () => {
       <div className={styles.Lessons__table}>
         <Table columns={columns} data={data} />
       </div>
+      <Form fields={[
+        {
+          name: "email",
+          label: "Email",
+          type: "email",
+        },
+        {
+          name: "date",
+          label: "Date",
+          type: "date",
+        },
+      ]} title="New Lesson" onSubmit={() => console.log("hi")} />
     </div>
   );
 };

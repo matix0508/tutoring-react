@@ -5,13 +5,14 @@ export type FormFieldProps = {
   label: string;
   name: string;
   type: string;
+  register?: any;
 };
 
-export const FormField: FC<FormFieldProps> = ({ label, type }) => {
+export const FormField: FC<FormFieldProps> = ({ label, type, register, name }) => {
   return (
     <div className={styles.FormField}>
       <label className={styles.FormField__label}>{label}</label>
-      <input className={styles.FormField__input} type={type} />
+      <input {...register(name)} className={styles.FormField__input} type={type} />
     </div>
   );
 };
