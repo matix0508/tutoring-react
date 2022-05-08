@@ -9,21 +9,45 @@ import { Lessons } from "./pages/Lessons/Lessons";
 import { Students } from "./pages/Students/Students";
 import { Payments } from "./pages/Payments/Payments";
 
+const pages = [
+  {
+    path: "/",
+    label: "Home",
+    component: <Home />,
+  },
+  {
+    path: "/lessons",
+    label: "Lessons",
+    component: <Lessons />,
+  },
+  {
+    path: "/students",
+    label: "Students",
+    component: <Students />,
+  },
+  {
+    path: "/payments",
+    label: "Payments",
+    component: <Payments />,
+  },
+];
+
 function App() {
   return (
     <div className="App">
       <Nav>
-        <NavItem name="Home" to="/tutoring-react/" />
-        <NavItem name="Lessons" to="/tutoring-react/lessons" />
-        <NavItem name="Students" to="/tutoring-react/students" />
-        <NavItem name="Payments" to="/tutoring-react/payments" />
+        {pages.map((page) => (
+          <NavItem name={page.label} to={"/tutoring-react" + page.path} />
+        ))}
       </Nav>
       <main>
         <Routes>
-          <Route path="/tutoring-react/" element={<Home />} />
-          <Route path="/tutoring-react/lessons" element={<Lessons />} />
-          <Route path="/tutoring-react/students" element={<Students />} />
-          <Route path="/tutoring-react/payments" element={<Payments />} />
+          {pages.map((page) => (
+            <Route
+              path={"/tutoring-react" + page.path}
+              element={page.component}
+            />
+          ))}
         </Routes>
       </main>
       <footer>Mateusz Wlekliński</footer>
